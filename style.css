@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(100, 100, 230);
+}
+
+main {
+  margin: auto;
+  width: 700px;
+  background-color: rgb(223, 213, 213);
+  padding: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 300px;
+  }
+}
