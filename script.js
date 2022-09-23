@@ -2,6 +2,9 @@ isAlive = true;
 let submitBtn = document.getElementById("submit");
 let entryGuess = document.getElementById("guess");
 let guesses = document.getElementById("guesses");
+let answer = document.getElementById("answer");
+let restart = document.getElementById("restart");
+guessCount = 0;
 
 let random = Math.floor(Math.random() * 100) + 1;
 console.log(random);
@@ -12,6 +15,7 @@ function submit() {
   } else {
     alert("Game Over!!");
   }
+  entryGuess.value = "";
 }
 
 function checkGuess() {
@@ -21,12 +25,15 @@ function checkGuess() {
   }
   guesses.textContent += " " + guess + ", ";
   if (guess < random) {
-    console.log("aww, bollocks, that was too low");
+    let result = `<span>Aww, bollocks, that was too low</span>`;
+    answer.innerHTML = result;
   } else if (guess === random) {
-    console.log("Cheers mate, that's correct");
+    let result = `<span>Cheers mate, that's correct</span><button onclick="window.location.reload()" id="restart">Restart</button>`;
+    answer.innerHTML = result;
     isAlive = false;
   } else {
-    console.log("aww, bollocks, that was too high");
+    let result = `<span>Aww, bollocks, that was too high</span>`;
+    answer.innerHTML = result;
   }
 }
 
